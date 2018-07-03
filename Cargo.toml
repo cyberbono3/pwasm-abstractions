@@ -1,0 +1,33 @@
+[package]
+name = "pwasm-abstractions-contract"
+version = "0.1.0"
+authors = ["Alexey Zhukovskiy <pzixel@gmail.com>"]
+
+[dependencies]
+pwasm-std = "0.9.0"
+pwasm-ethereum = "0.5.1"
+pwasm-abi = "0.1.2"
+pwasm-abi-derive = "0.1.2"
+
+[dependencies.bigint]
+version = "4.4.0"
+default-features = false
+
+[dependencies.parity-hash]
+version = "1.2.0"
+default-features = false
+
+[dev-dependencies.pwasm-test]
+git = "https://github.com/paritytech/pwasm-test"
+default-features = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+std = ["pwasm-std/std", "pwasm-ethereum/std", "pwasm-test/std"]
+
+[profile.release]
+panic = "abort"
+lto = true
+opt-level = "z"
