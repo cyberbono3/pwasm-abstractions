@@ -3,4 +3,4 @@ Make sure you've installed [required tools](https://github.com/paritytech/pwasm-
 ```
 ./build.sh
 ```
-As a result the `contract.wasm` should be created under the `./target/wasm32-unknown-unknown/release/` directory.
+As a result the `SampleContractInterface.wasm` should be created under the `./target/wasm32-unknown-unknown/release/` directory.
